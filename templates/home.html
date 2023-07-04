@@ -1,0 +1,42 @@
+
+         {% extends 'base.html' %} 
+         {% block main %}      
+                <div class="formcontainer">
+        <div class="container">
+            <h3>Website</h3>
+            <form action="/yoururl" method="post">
+                <label for="code">Short Name</label>
+                <input type="text" name="code"  value="" id="code" required> <br>
+                <label for="file">Website Url</label>
+                <input type="url" name="url" id="url" value="" required> <br>
+                <button type="submit" class="formbutton">Shorten</button>
+                
+            </form>
+        </div>
+        <div class="container">
+            <h3>File</h3>
+            <form action="/yoururl" method="post" enctype="multipart/form-data">
+                <label for="code">Short Name</label>
+        <input type="text" name="code"  value="" id="code" required> <br>
+        <label for="url">Upload File</label>
+        <input type="file" name="file" id="file" value="" required> <br>
+        <button type="submit" class="formbutton">Shorten</button>
+
+    </form>
+</div>
+</div>
+<div class="list">
+    <div class="listitems">
+    {% if codes %}
+    <h2>Codes you have created</h2>
+    <ul>
+        {% for code in codes %}
+        <a href="{{ url_for('redirect_to_url',code=code) }}"> <li>{{code}}</li> </a>
+        {% endfor %}
+    </ul>
+    {% endif %}</div>
+</div>
+
+{% endblock %}
+
+

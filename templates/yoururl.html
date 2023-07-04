@@ -1,0 +1,10 @@
+
+{% extends 'base.html' %} 
+{% block main %}    
+<div class="urlcontainer">
+          <h1>URL Created </h1> 
+          <div class="urlclass">
+          <input type="url" name="url" id="urlinput" value="{{url}}"></div>
+          <button id="urlbutton" onclick="copyToClipboard()">Copy Url</button>
+</div>
+{% endblock %}

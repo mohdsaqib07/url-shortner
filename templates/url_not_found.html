@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Error 404 - Page Not Found</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: #FF0000;
+    }
+
+    p {
+      font-size: 24px;
+      color: #333333;
+    
+    }
+    p a{
+        color : #333333;
+    }
+  </style>
+</head>
+<body>
+  <h1>Error 404</h1>
+  <p>Page Not Found</p>
+  <p>We couldn't find what you are looking for . Come visist our homepage :) ❗ </p>
+  <p><a href="{{ url_for('index')}}">Home</a></p>
+</body>
+</html>
