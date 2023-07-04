@@ -14,7 +14,7 @@ def run_app():
     @app.route('/yoururl',methods=['POST','GET'])
     def your_url():
         if request.method == 'POST':
-            # url={'url':request.form['url'],'shortenurl':request.form['code']}
+
             url=dict()
             url.clear()
             if os.path.exists('config.json'):
@@ -38,7 +38,7 @@ def run_app():
             return render_template('yoururl.html',code=code,title=f'Your url {code}',url=f'http://localhost:5000/{code}')
 
         else:
-            # abort(401)
+           
             return(redirect(url_for('index')))
 
     @app.route('/<string:code>')
@@ -51,7 +51,7 @@ def run_app():
                         return redirect(url[code]['url'])
                     else:
                         return(redirect(url_for('static',filename='user_files/' + url[code]['file'])))
-                        #   webbrowser.open_new_tab(url[code]['url'])
+                      
                 else:
                     abort(404)
 
